@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c9a24d] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c9a24d]"></span>
             </span>
-            <span>available for new projects</span>
+            <span>accepting new clients across Kent</span>
           </div>
         </div>
 
@@ -25,8 +25,8 @@ const HomePage: React.FC = () => {
           Growth partners focused on <br className="block md:hidden xl:block" />
           <TextRotator
             words={[
-              "Website Development",
-              "Paid AD Campaigns",
+              "Website Design",
+              "Paid Ad Campaigns",
               "Local SEO",
               "Graphic Design"
             ]}
@@ -52,7 +52,7 @@ const HomePage: React.FC = () => {
           <div>
             <span className="block font-mono text-sm text-text-muted mb-8">.about</span>
             <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] leading-tight font-medium mb-12">
-              my craft is building experiences that bring value to people and celebrate function over form. let's hide the ego and give some freedom to creativity and make the first small step changing the world to a better place
+              we help small and medium businesses across Kent get found online, win more customers, and grow. websites, SEO, advertising, and design, built around your goals, not ours.
             </h2>
           </div>
           <div>
@@ -74,15 +74,15 @@ const HomePage: React.FC = () => {
 
       <section className="mb-32 md:mb-48">
         <div className="flex items-center justify-between mb-12">
-          <span className="font-mono text-sm text-text-muted">.three latest notes</span>
+          <span className="font-mono text-sm text-text-muted">.latest insights</span>
           <div className="h-[1px] flex-grow bg-white/10 ml-4"></div>
         </div>
 
         <div className="flex flex-col">
           {BLOG_POSTS.map((post) => (
-            <a
+            <Link
               key={post.id}
-              href={post.link || '#'}
+              to={post.link || '#'}
               className="group flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-white/10 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-lg"
             >
               <div className="flex flex-col gap-2">
@@ -92,12 +92,14 @@ const HomePage: React.FC = () => {
               <div className="mt-4 md:mt-0 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
                 <ArrowUpRight className="w-6 h-6" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="flex justify-center mt-16">
-          <Button href="#blog">visit blog</Button>
+          <Link to="/strategies">
+            <Button as="span">view all services</Button>
+          </Link>
         </div>
       </section>
 
@@ -110,7 +112,7 @@ const HomePage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-9">
             <h2 className="text-4xl md:text-6xl lg:text-[5rem] leading-[1.1] font-medium tracking-tight mb-12">
-              i'm open for freelance projects, feel free to email me to see how can we collaborate
+              ready to grow your business? get in touch and let's discuss what we can build together.
             </h2>
           </div>
           <div className="lg:col-span-3 flex items-end justify-start lg:justify-end pb-4">

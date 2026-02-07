@@ -12,10 +12,10 @@ const ProjectsPage: React.FC = () => {
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[6.5rem] leading-[1.2] font-medium tracking-tighter text-white mb-8">
-          Selected work
+          Our work
         </h1>
         <p className="text-lg md:text-xl text-text-muted max-w-2xl">
-          A curated collection of projects spanning web development, branding, paid campaigns, and digital strategy.
+          Real projects for real Kent businesses. Website builds, rebrand campaigns, local SEO rollouts, and paid advertising that delivered measurable results.
         </p>
       </section>
 
