@@ -35,5 +35,5 @@ export const ArrowRight: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 export const Logo: React.FC<{ className?: string }> = ({ className }) => (
-  <span className={`font-medium tracking-tight ${className}`}>.nitro</span>
+  <span className={`font-medium tracking-tight ${className}`}>BuildMediaStrategies</span>
 );
