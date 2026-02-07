@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nitro — Portfolio Template Replica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              mono: ['DM Mono', 'monospace'],
+            },
+            colors: {
+              background: '#000000',
+              text: '#ffffff',
+              'text-muted': 'rgba(255, 255, 255, 0.5)',
+              'grid-line': 'rgba(255, 255, 255, 0.15)',
+              'card-orange': '#ff6200',
+              'card-white': '#ffffff',
+              'card-dark': '#2e3538',
+              'card-yellow': '#ffc400',
+              'card-grey': '#949494',
+              'accent-green': '#00ff77',
+            },
+            maxWidth: {
+              'screen-2xl': '1440px',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      .grid-lines {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1440px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 0;
+        padding: 0 80px; /* Matching the content padding */
+      }
+      .grid-line {
+        width: 1px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      @media (max-width: 1024px) {
+        .grid-lines { padding: 0 48px; }
+      }
+      @media (max-width: 768px) {
+        .grid-lines { padding: 0 24px; }
+        .grid-line:nth-child(even) { display: none; } /* Show fewer lines on mobile */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="grid-lines">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
