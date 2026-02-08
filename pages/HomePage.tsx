@@ -14,8 +14,8 @@ const HomePage: React.FC = () => {
           <span>BuildMediaStrategies</span>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c9a24d] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c9a24d]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFFFFF] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FFFFFF]"></span>
             </span>
             <span>accepting new clients across Kent</span>
           </div>
@@ -42,7 +42,12 @@ const HomePage: React.FC = () => {
             className="sticky top-32 md:top-40 transition-all duration-700"
             style={{ zIndex: index + 1 }}
           >
-            <ProjectCard project={project} />
+            <ProjectCard
+              project={{
+                ...project,
+                title: project.slug === 'me-stewart' ? 'M E Stewart LTD' : project.title,
+              }}
+            />
           </div>
         ))}
       </section>
@@ -64,9 +69,9 @@ const HomePage: React.FC = () => {
 
         <div className="relative w-full aspect-[3/4] lg:aspect-auto lg:h-[800px] overflow-hidden rounded-lg grayscale hover:grayscale-0 transition-all duration-700">
           <img
-            src="https://framerusercontent.com/images/INr3fWPwNzKVuKbZgjxl5xvZaSA.jpg"
+            src="assets/Graphic & Web Design (1).png"
             alt="Portrait"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
           <div className="absolute inset-0 bg-[url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')] opacity-[0.08] mix-blend-overlay pointer-events-none"></div>
         </div>

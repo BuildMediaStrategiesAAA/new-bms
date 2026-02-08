@@ -5,7 +5,7 @@ import { Logo, ArrowUpRight } from './Icons';
 const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 flex justify-center px-6 md:px-12 lg:px-20 py-6 pointer-events-none">
-      <div className="w-full max-w-[1440px] flex justify-between items-center pointer-events-auto backdrop-blur-sm bg-[#0e2a1f]/80 p-4 rounded-xl border border-white/5">
+      <div className="w-full max-w-[1440px] flex justify-between items-center pointer-events-auto backdrop-blur-sm bg-[#000000]/80 p-4 rounded-xl border border-white/5">
         <div className="flex items-center">
           <Link to="/" className="text-white text-2xl font-bold hover:opacity-80 transition-opacity">
             <Logo />

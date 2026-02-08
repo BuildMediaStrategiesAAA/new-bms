@@ -15,18 +15,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       style={{ backgroundColor: project.bgColor, color: project.textColor }}
     >
       <div className="absolute top-0 left-0 w-full p-6 md:p-8 flex justify-between items-start z-20">
-        <div className="font-mono text-sm opacity-60">{project.year}</div>
-        <div className="font-mono text-sm opacity-60 text-right">{project.category}</div>
+        <div className="font-mono text-sm opacity-60 text-white">2025</div>
+        <div className="font-mono text-sm opacity-60 text-right text-white">Website Design &amp; Graphic Design</div>
       </div>
 
-      <div className="absolute top-20 left-6 md:left-8 z-20">
-        <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter">
+      <div className="absolute top-16 left-6 md:left-8 z-20">
+        <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-white">
           {project.title}
         </h3>
       </div>
 
-      <div className="absolute top-8 right-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <ArrowRight className="w-8 h-8 md:w-10 md:h-10" />
+      <div className="absolute top-12 right-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-white transform transition-transform duration-500 ease-out group-hover:-rotate-45" />
       </div>
 
       <div className="absolute inset-0 flex items-end justify-center overflow-hidden">

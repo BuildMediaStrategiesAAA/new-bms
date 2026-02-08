@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import Button from '../components/Button';
+import ProjectCard from '../components/ProjectCard';
 import { ArrowUpRight } from '../components/Icons';
 import { PROJECTS } from '../constants';
 
@@ -36,7 +37,7 @@ const ProjectDetailPage: React.FC = () => {
           <div className="absolute inset-0 flex items-end justify-center overflow-hidden">
             <div className="relative w-3/4 h-3/4 md:w-2/3 md:h-4/5 translate-y-10">
               <img
-                src={project.image}
+                src={project.image.startsWith('/') ? project.image : '/' + project.image}
                 alt={project.title}
                 className="w-full h-full object-contain object-bottom drop-shadow-2xl"
               />
@@ -103,39 +104,12 @@ const ProjectDetailPage: React.FC = () => {
 
         <div className="flex flex-col gap-20 md:gap-32">
           <div className="sticky top-32 md:top-40 transition-all duration-700" style={{ zIndex: 1 }}>
-            <Link to={`/projects/${nextProject.slug}`} className="block">
-              <div
-                className="group relative block w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] rounded-lg overflow-hidden transition-transform duration-500 hover:-translate-y-2"
-                style={{ backgroundColor: nextProject.bgColor, color: nextProject.textColor }}
-              >
-                <div className="absolute top-0 left-0 w-full p-6 md:p-8 flex justify-between items-start z-20">
-                  <div className="font-mono text-sm opacity-60">{nextProject.year}</div>
-                  <div className="font-mono text-sm opacity-60 text-right">{nextProject.category}</div>
-                </div>
-
-                <div className="absolute top-20 left-6 md:left-8 z-20">
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter">
-                    {nextProject.title}
-                  </h3>
-                </div>
-
-                <div className="absolute top-8 right-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight className="w-8 h-8 md:w-10 md:h-10" />
-                </div>
-
-                <div className="absolute inset-0 flex items-end justify-center overflow-hidden">
-                  <div className="relative w-3/4 h-3/4 md:w-2/3 md:h-4/5 translate-y-10 group-hover:translate-y-4 transition-transform duration-700 ease-out">
-                    <img
-                      src={nextProject.image}
-                      alt={nextProject.title}
-                      className="w-full h-full object-contain object-bottom drop-shadow-2xl"
-                    />
-                  </div>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" />
-              </div>
-            </Link>
+            <ProjectCard
+              project={{
+                ...nextProject,
+                image: nextProject.image.startsWith('/') ? nextProject.image : '/' + nextProject.image,
+              }}
+            />
           </div>
         </div>
       </section>
